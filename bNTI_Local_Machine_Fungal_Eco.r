@@ -2,7 +2,7 @@
 ## change to the directory on your computer that contains the OTU table and phylogeny
 ## note that the 'slash' needs to be changed to a forward slash like this /
 setwd("C:/Users/jaysonchao/github/Fungi_BioDiv_CommAssembly")
-Source("Raup_Crick_Abundance.r")
+source("Raup_Crick_Abundance.r")
 ## load this library
 library(picante)
 ## read in OTU table
