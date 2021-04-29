@@ -61,8 +61,8 @@ if(length(args) > 1) {
 input.path <- normalizePath( args.list$input_file )
 output.file <- ifelse( is.null(args.list$output_file), "output", args.list$output_file )
 
-if (!dir.exists(output.file)){
-dir.create(output.file)
+if (!file.exists(output.file)){
+cat( output.file , "will be created", "\n")
 } else {
     stop("file already exists! If you do not want to overwrite it, please use a new file path.\n", call.=FALSE)
 }
@@ -129,6 +129,5 @@ dim(otu_all)
 comm=t(otu_all)
 RC_bray <- RC.p(comm = comm,method = "bray",rand = 1000, nworker = num_processor)
 ### write output files
-write.csv(file=output.file, RC_bray,sep = "\t")
-
-
+write.table(file=output.file, RC_bray,sep = "\t")
+cat("Raup-Crick metric calculation based on Bray-Curtis distance done")
