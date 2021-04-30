@@ -130,4 +130,4 @@ comm=t(otu_all)
 RC_bray <- RC.p(comm = comm,method = "bray",rand = 1000, nworker = num_processor)
 ### write output files
 write.table(file=output.file, RC_bray,sep = "\t")
-cat("Raup-Crick metric calculation based on Bray-Curtis distance done")
+cat("Raup-Crick metric calculation based on Bray-Curtis distance done", "\n")
